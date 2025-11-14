@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-pink: #ff006e;
+  --neon-blue: #06d6ff;
+  --neon-purple: #8338ec;
+  --neon-cyan: #00f5ff;
+  --neon-orange: #ff5722;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: #000;
+}
+
+@keyframes walk {
+  0%, 100% {
+    transform: translateX(-50vw) translateY(0) scale(0.6);
+  }
+  50% {
+    transform: translateX(50vw) translateY(-2px) scale(0.6);
+  }
+}
+
+@keyframes camera-move {
+  0% {
+    transform: translateX(-10px) scale(1.05);
+  }
+  50% {
+    transform: translateX(10px) scale(1.1);
+  }
+  100% {
+    transform: translateX(-10px) scale(1.05);
+  }
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes puddle-ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+}
+
+.neon-text {
+  text-shadow:
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 40px currentColor;
+}
+
+.glow-effect {
+  filter: blur(1px) brightness(1.2);
+}
+
+.reflection {
+  transform: scaleY(-1);
+  opacity: 0.3;
+  filter: blur(3px);
+}
